@@ -1,6 +1,6 @@
 """三体问题模拟"""
 # 这个程序模拟了三体问题，其中恒星和行星类在star.py中定义。程序从一个YAML配置文件加载初始条件，并使用Pygame Zero进行图形显示和更新。
-# 所有所需库: pgzrun, logging, yaml, os, sys
+# 所有所需库: pgzrun, logging, pyyaml, os, sys
 
 from star import Star, Planet
 import pgzrun

@@ -1,8 +1,6 @@
-import yaml
-
 class Star:
     """
-    表示一个星体，包含位置、速度和质量
+    表示一个恒星，包含位置、速度和质量
     """
     def __init__(self, x, y, dx=0, dy=0, m=100, color=(0, 0, 0)):
         """

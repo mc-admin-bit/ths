@@ -2,13 +2,14 @@ class Star:
     """
     表示一个恒星，包含位置、速度和质量
     """
-    def __init__(self, x, y, dx=0, dy=0, m=100, color=(0, 0, 0)):
+    def __init__(self, x, y, dx=0, dy=0, m=100, color=(0, 0, 0), traj_length=100):
         """
         :param x: x坐标
         :param y: y坐标
         :param dx: x方向的速度向量
         :param dy: y方向的速度向量
         :param m: 质量
+        :param traj_length: 轨迹长度
         """
         self.x = x
         self.y = y
@@ -16,12 +17,14 @@ class Star:
         self.dy = dy
         self.m = m
         self.color = color
+        self.traj = Trajectory(color, traj_length)
     def move(self):
         """
         根据速度更新位置
         """
         self.x += self.dx
         self.y += self.dy
+        self.traj.add_point(self.x, self.y)
 
     def distance(self, other):
         """
@@ -61,14 +64,15 @@ class Star:
         根据质量计算星体的半径
         :return: 半径
         """
-        return 7
+        return 6
 
 class Planet(Star):
     """
     表示一个行星，继承自Star类
     """
-    def __init__(self, x, y, dx=0, dy=0, m=100, color=(0, 0, 0)):
-        super().__init__(x, y, dx, dy, m, color)
+    def __init__(self, x, y, dx=0, dy=0, m=100, color=(0, 0, 0), traj_length=100):
+        super().__init__(x, y, dx, dy, m, color, traj_length)
+        self.traj = Trajectory(color, traj_length)
 
     def get_radius(self):
         """
@@ -76,3 +80,31 @@ class Planet(Star):
         :return: 半径
         """
         return 3
+
+class TrajPoint:
+    """
+    表示一个点，用于记录行星的运动路径
+    """
+    def __init__(self, color=(0, 0, 0), x=0, y=0):
+        self.color = color
+        self.x = x
+        self.y = y
+
+class Trajectory:
+    """
+    表示一个行星的运动路径，包含多个TrajPoint对象
+    """
+    def __init__(self, color=(0, 0, 0), traj_length=100):
+        self.color = color
+        self.traj_length = traj_length
+        self.points = []
+
+    def add_point(self, x, y):
+        """
+        添加一个点到路径中
+        :param x: x坐标
+        :param y: y坐标
+        """
+        self.points.append(TrajPoint(self.color, x, y))
+        if len(self.points) > self.traj_length:
+            self.points.pop(0)

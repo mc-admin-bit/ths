@@ -1,0 +1,23 @@
+# 900x600
+stars:
+  - mass: 100000000000000
+    pos: [450, 200]
+    vel: [0, 0]
+    color: [255, 0, 0]
+  - mass: 100000000000000
+    pos: [300, 400]
+    vel: [0, -1]
+    color: [0, 255, 0]
+  - mass: 100000000000000
+    pos: [600, 400]
+    vel: [0, 1]
+    color: [0, 0, 255]
+planets:
+  - mass: 10000
+    pos: [450, 300]
+    vel: [0, 0]
+    color: [255, 255, 255]
+star_trajectory: true
+planet_trajectory: true
+trajectory_length: 200
+camera_speed: 15

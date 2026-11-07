@@ -46,7 +46,7 @@ three_body/
 > - 添加配置文件中视角移动速度配置项`camera_speed`
 > - 将`docx.md`和`update.md`并入`README.md`
 
-### Version 2.1.1-2.2.2 更新说明
+### Version 2.1.1-2.2.3 更新说明
 > - 修复了暂停时仍有日志输出的bug
 > - 在.gitignore中删除了`READ.md`和`stars.yaml`
 > - 上传到`Github`仓库`mc-admin-bit/ths`

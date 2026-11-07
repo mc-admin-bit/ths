@@ -76,6 +76,7 @@ def update():
             star.move()
         for planet in planets:
             planet.move()
+    
     if keyboard.K_UP: # type: ignore
         for star in stars:
             star.y += camera_speed
@@ -85,6 +86,7 @@ def update():
             planet.y += camera_speed
             for t in planet.traj.points:
                 t.y += camera_speed
+    
     if keyboard.K_DOWN: # type: ignore
         for star in stars:
             star.y -= camera_speed
@@ -94,6 +96,7 @@ def update():
             planet.y -= camera_speed
             for t in planet.traj.points:
                 t.y -= camera_speed
+    
     if keyboard.K_LEFT: # type: ignore
         for star in stars:
             star.x += camera_speed
@@ -103,6 +106,7 @@ def update():
             planet.x += camera_speed
             for t in planet.traj.points:
                 t.x += camera_speed
+    
     if keyboard.K_RIGHT: # type: ignore
         for star in stars:
             star.x -= camera_speed

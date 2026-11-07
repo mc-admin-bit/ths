@@ -47,8 +47,9 @@ def init_stars():
 
 def format_star():
     """更新星体和行星的位置，并记录调试信息"""
-    logging.debug(f"Updated stars: {[{'x': p.x, 'y': p.y} for p in stars]}")
-    logging.debug(f"Updated planets: {[{'x': p.x, 'y': p.y} for p in planets]}")
+    if start_flag:
+        logging.debug(f"Updated stars: {[{'x': p.x, 'y': p.y} for p in stars]}")
+        logging.debug(f"Updated planets: {[{'x': p.x, 'y': p.y} for p in planets]}")
 
 def on_key_down(key):
     global start_flag
